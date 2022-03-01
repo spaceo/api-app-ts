@@ -1,0 +1,18 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type Cat {
+  """The type of cat"""
+  type: String!
+
+  """The name of the cat"""
+  name: String!
+
+  """The image of the cat"""
+  img: String!
+}
+
+type Query {
+  cat(id: Int!): Cat!
+}
