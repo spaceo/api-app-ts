@@ -1,32 +1,9 @@
 import { gql } from "graphql-request";
 import { useCatQuery, CatQuery } from "./graphql/generated";
 
-
-// const endpoint = "http://localhost:3000/graphql";
-
-
-// function useCat() {
-//   return useQuery("cat", async () => {
-//     const {
-//       cat
-//     } = await request(
-//       endpoint,
-      // gql`
-      // query cat {
-      //   cat(id: 3) {
-      //     type,
-      //     name,
-      //     img
-      //   }
-      // }`
-//     );
-//     return cat;
-//   });
-// }
-
 gql`
-  query cat {
-    cat(id: 3) {
+  query cat($id: Int!) {
+    cat(id: $id) {
       type,
       name,
       img
@@ -34,7 +11,7 @@ gql`
   }`
 
 function Cats() {
-  const { status, isFetching, data } = useCatQuery();
+  const { status, isFetching, data } = useCatQuery({id: 3 });
   let output = null;
 
   if(isFetching) {

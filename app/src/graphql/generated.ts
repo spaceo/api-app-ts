@@ -53,15 +53,17 @@ export type QueryCatArgs = {
   id: Scalars['Int'];
 };
 
-export type CatQueryVariables = Exact<{ [key: string]: never; }>;
+export type CatQueryVariables = Exact<{
+  id: Scalars['Int'];
+}>;
 
 
 export type CatQuery = { __typename?: 'Query', cat: { __typename?: 'Cat', type: string, name: string, img: string } };
 
 
 export const CatDocument = `
-    query cat {
-  cat(id: 3) {
+    query cat($id: Int!) {
+  cat(id: $id) {
     type
     name
     img
@@ -72,11 +74,11 @@ export const useCatQuery = <
       TData = CatQuery,
       TError = unknown
     >(
-      variables?: CatQueryVariables,
+      variables: CatQueryVariables,
       options?: UseQueryOptions<CatQuery, TError, TData>
     ) =>
     useQuery<CatQuery, TError, TData>(
-      variables === undefined ? ['cat'] : ['cat', variables],
+      ['cat', variables],
       fetcher<CatQuery, CatQueryVariables>(CatDocument, variables),
       options
     );
