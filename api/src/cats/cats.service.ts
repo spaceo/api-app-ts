@@ -12,7 +12,7 @@ export class CatsService {
         const cat = new Cat();
         cat.type = 'Bengal Cat';
         cat.name = 'Allan';
-        cat.img = 'http://localhost:3001/images/bengal.jpg';
+        cat.img = 'images/bengal.jpg';
         resolve(cat);
       }, 3000);
     });

@@ -26,7 +26,7 @@ function Cats() {
         <p>
           You have loaded a cat of the type: <strong>{result.type}</strong>
         </p>
-        <p><img src={result.img} width="300px"/></p>
+        <p><img src={`${process.env.REACT_IMAGES_DOMAIN}/${result.img}`} width="300px"/></p>
       </>
     );
   }

@@ -8,7 +8,7 @@ RUN npm install
 
 COPY . ./
 
-RUN npm run build
+RUN DOTENV_CONFIG_PATH=.production.env npm run build --require dotenv/config
 
 # ---
 FROM fholzer/nginx-brotli:v1.12.2
