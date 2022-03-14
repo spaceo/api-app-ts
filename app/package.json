@@ -27,7 +27,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "generate:dev": "graphql-codegen --require dotenv/config",
-    "generate:production": "graphql-codegen --require dotenv/config --dotenv_config_path .production.env"
+    "generate:production": "DOTENV_CONFIG_PATH=.production.env graphql-codegen --require dotenv/config"
   },
   "eslintConfig": {
     "extends": [

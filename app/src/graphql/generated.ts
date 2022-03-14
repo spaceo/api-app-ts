@@ -7,7 +7,7 @@ export type MakeMaybe<T, K extends keyof T> = Omit<T, K> & { [SubKey in K]: Mayb
 
 function fetcher<TData, TVariables>(query: string, variables?: TVariables) {
   return async (): Promise<TData> => {
-    const res = await fetch("http://localhost:3001/graphql", {
+    const res = await fetch("https://api-app-ts-4xdubsfemq-nw.a.run.app/graphql", {
     method: "POST",
     ...({"headers":{"Content-Type":"application/json"}}),
       body: JSON.stringify({ query, variables }),
