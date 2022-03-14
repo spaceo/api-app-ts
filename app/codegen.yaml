@@ -1,4 +1,4 @@
-schema: 'http://localhost:3001/graphql'
+schema: "${GRAPHQL_ENDPOINT}"
 documents: './src/**/*.tsx'
 generates:
   ./src/graphql/generated.ts:
@@ -8,7 +8,7 @@ generates:
       - typescript-react-query
     config:
       fetcher: {
-        endpoint: "http://localhost:3001/graphql",
+        endpoint: "${GRAPHQL_ENDPOINT}",
         fetchParams: {
           headers: {
             "Content-Type": "application/json"

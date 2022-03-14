@@ -26,7 +26,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "generate": "graphql-codegen"
+    "generate:dev": "graphql-codegen --require dotenv/config",
+    "generate:production": "graphql-codegen --require dotenv/config --dotenv_config_path .production.env"
   },
   "eslintConfig": {
     "extends": [
@@ -47,6 +48,7 @@
     ]
   },
   "devDependencies": {
-    "@graphql-codegen/cli": "^2.6.2"
+    "@graphql-codegen/cli": "^2.6.2",
+    "dotenv": "^16.0.0"
   }
 }
