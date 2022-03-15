@@ -23,11 +23,11 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "sh -ac '. .env.${REACT_APP_ENV}; react-scripts build'",
+    "build": "react-scripts build'",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "generate:dev": "graphql-codegen --require dotenv/config",
-    "generate:production": "DOTENV_CONFIG_PATH=.production.env graphql-codegen --require dotenv/config"
+    "generate:production": "DOTENV_CONFIG_PATH=.env.production graphql-codegen --require dotenv/config"
   },
   "eslintConfig": {
     "extends": [
@@ -48,7 +48,6 @@
     ]
   },
   "devDependencies": {
-    "@graphql-codegen/cli": "^2.6.2",
-    "dotenv": "^16.0.0"
+    "@graphql-codegen/cli": "^2.6.2"
   }
 }
